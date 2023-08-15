@@ -1,0 +1,46 @@
+package org.example;
+import java.util.Scanner;
+
+//Superclass
+class Vehicle {
+    protected String brand;        // Vehicle attribute
+    public void honk() {                    // Vehicle method
+        System.out.println("Vroom, vroom!");
+    }
+}
+//Subclass
+class Car extends Vehicle {
+    private String modelName;    // Car attribute
+
+    public void setModelName(String modelName) {  //Method for user input
+        this.modelName = modelName;
+    }
+
+    public String getModelName() { //Method to return model name
+        return modelName;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // myCar object
+        Car myCar = new Car();
+
+        // Call the honk() method
+        myCar.honk();
+
+        // user input
+        System.out.print("Enter the brand of the car: ");
+        String brand = scanner.nextLine();
+        myCar.brand = brand;
+
+        System.out.print("Enter the model name of the car: ");
+        String modelName = scanner.nextLine();
+        myCar.setModelName(modelName);
+
+        //Display output
+        System.out.println(myCar.brand + " " + myCar.getModelName());
+
+
+    }
+}
