@@ -1,0 +1,31 @@
+package org.example;
+
+//Superclass
+class VideoGames{
+    public void games(){
+        System.out.println("There are a lot of Video games");
+    }
+}
+//Subclass
+class CSGO extends VideoGames{
+    public void games(){
+        System.out.println("Counter Strike: Global Offensive");
+    }
+}
+//Subclass / Overide happens
+class GenshinImpact extends VideoGames{
+    public void games(){
+        System.out.println("Genshin Impact");
+    }
+}
+//Class for call the subclass
+class JavaPolymorphism{
+    public static void main(String[]args){
+        VideoGames myGames = new VideoGames();
+        VideoGames myCSGO = new CSGO();
+        VideoGames myGenshinImpact = new GenshinImpact();
+        myGames.games();
+        myCSGO.games();
+        myGenshinImpact.games();
+    }
+}
